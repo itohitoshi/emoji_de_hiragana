@@ -42,10 +42,13 @@ struct EmojiDetailView: View {
                 // ひらがな表示
                 Text(emoji.hiragana)
                     .font(.system(size: 60, weight: .bold, design: .rounded))
+                    .minimumScaleFactor(0.5)
+                    .lineLimit(1)
                     .foregroundColor(.white)
                     .shadow(color: .black.opacity(0.5), radius: 5)
                     .padding(.horizontal, 30)
                     .padding(.vertical, 15)
+                    .frame(maxWidth: UIScreen.main.bounds.width - 60)
                     .background(
                         RoundedRectangle(cornerRadius: 20)
                             .fill(
