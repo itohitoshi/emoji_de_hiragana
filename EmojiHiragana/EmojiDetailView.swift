@@ -10,8 +10,8 @@ struct EmojiDetailView: View {
 
     var body: some View {
         ZStack {
-            // 半透明の背景
-            Color.black.opacity(0.3)
+            // 半透明の背景（ホワイト基調）
+            Color.white.opacity(0.9)
                 .ignoresSafeArea()
                 .onTapGesture {
                     dismiss()
@@ -26,8 +26,7 @@ struct EmojiDetailView: View {
                     }) {
                         Image(systemName: "xmark.circle.fill")
                             .font(.system(size: 50))
-                            .foregroundColor(.white)
-                            .shadow(radius: 5)
+                            .foregroundColor(.gray)
                     }
                     .padding()
                 }
@@ -64,7 +63,7 @@ struct EmojiDetailView: View {
                 // タップで再読み上げのヒント
                 Text("タップしてもういちど きく")
                     .font(.system(size: 20, weight: .medium, design: .rounded))
-                    .foregroundColor(.white.opacity(0.8))
+                    .foregroundColor(.gray)
                     .padding(.top, 20)
 
                 Spacer()
@@ -80,8 +79,7 @@ struct EmojiDetailView: View {
                         .padding(.vertical, 15)
                         .background(
                             Capsule()
-                                .fill(Color.gray.opacity(0.6))
-                                .shadow(radius: 5)
+                                .fill(Color.gray)
                         )
                 }
                 .padding(.bottom, 40)
