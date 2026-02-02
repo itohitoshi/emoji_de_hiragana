@@ -20,11 +20,6 @@ struct HomeView: View {
                 .ignoresSafeArea()
 
                 VStack(spacing: 0) {
-                    // 広告エリア
-                    AdBannerView()
-                        .frame(height: 60)
-                        .padding(.top, 10)
-
                     Spacer()
 
                     // 吹き出し + ランダム絵文字
@@ -147,20 +142,6 @@ struct ScaleButtonStyle: ButtonStyle {
         configuration.label
             .scaleEffect(configuration.isPressed ? 0.95 : 1.0)
             .animation(.easeInOut(duration: 0.1), value: configuration.isPressed)
-    }
-}
-
-// 広告バナープレースホルダー
-struct AdBannerView: View {
-    var body: some View {
-        ZStack {
-            RoundedRectangle(cornerRadius: 8)
-                .fill(Color.gray.opacity(0.2))
-            Text("広告エリア")
-                .font(.system(size: 14))
-                .foregroundColor(.gray)
-        }
-        .padding(.horizontal, 16)
     }
 }
 
