@@ -5,8 +5,6 @@ class EmojiViewModel: ObservableObject {
     @Published var floatingEmojis: [FloatingEmoji] = []
     @Published var selectedEmoji: EmojiItem?
 
-    let speechService = SpeechService()
-
     private var displayLink: CADisplayLink?
     private var screenSize: CGSize = .zero
     private let emojiCount = 10
@@ -104,12 +102,7 @@ class EmojiViewModel: ObservableObject {
     }
 
     func clearSelection() {
-        speechService.stop()
         selectedEmoji = nil
-    }
-
-    func speakHiragana(_ hiragana: String) {
-        speechService.speak(hiragana)
     }
 
     func refreshEmojis() {

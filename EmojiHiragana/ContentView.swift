@@ -83,9 +83,6 @@ struct ContentView: View {
                         emoji: selectedEmoji,
                         onDismiss: {
                             viewModel.clearSelection()
-                        },
-                        onSpeak: { hiragana in
-                            viewModel.speakHiragana(hiragana)
                         }
                     )
                     .transition(.opacity)

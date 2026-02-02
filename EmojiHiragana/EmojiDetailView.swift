@@ -3,7 +3,6 @@ import SwiftUI
 struct EmojiDetailView: View {
     let emoji: EmojiItem
     let onDismiss: () -> Void
-    let onSpeak: (String) -> Void
 
     @State private var scale: CGFloat = 0.5
     @State private var opacity: Double = 0
@@ -60,12 +59,6 @@ struct EmojiDetailView: View {
                             .shadow(radius: 10)
                     )
 
-                // タップで再読み上げのヒント
-                Text("タップしてもういちど きく")
-                    .font(.system(size: 20, weight: .medium, design: .rounded))
-                    .foregroundColor(.gray)
-                    .padding(.top, 20)
-
                 Spacer()
 
                 // とじるボタン（下部）
@@ -93,14 +86,6 @@ struct EmojiDetailView: View {
                 scale = 1.0
                 opacity = 1.0
             }
-            // 自動読み上げ
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-                onSpeak(emoji.hiragana)
-            }
-        }
-        .onTapGesture {
-            // タップで再読み上げ
-            onSpeak(emoji.hiragana)
         }
     }
 
@@ -118,7 +103,6 @@ struct EmojiDetailView: View {
 #Preview {
     EmojiDetailView(
         emoji: EmojiItem(emoji: "🐶", hiragana: "いぬ", category: .animal),
-        onDismiss: {},
-        onSpeak: { _ in }
+        onDismiss: {}
     )
 }
