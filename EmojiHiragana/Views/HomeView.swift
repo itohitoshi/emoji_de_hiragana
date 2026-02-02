@@ -184,7 +184,7 @@ struct ContactView: View {
                             .font(.system(size: 16, design: .rounded))
                             .foregroundColor(.gray)
 
-                        Text("example@example.com")
+                        Text("coo.hh.design@gmail.com")
                             .font(.system(size: 18, weight: .medium))
                             .foregroundColor(.blue)
                     }
